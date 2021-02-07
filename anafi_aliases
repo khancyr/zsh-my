@@ -1,0 +1,5 @@
+# Add Parrot Anafi toolchain
+export PATH="/opt/gcc-linaro-6.3-2017.02-aarch64-linux-gnu/bin:$PATH"
+
+# Add ccache tools
+export PATH="/usr/lib/ccache:$PATH"

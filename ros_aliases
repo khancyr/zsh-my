@@ -1,0 +1,12 @@
+# Add ROS setup
+source /opt/ros/melodic/setup.zsh
+
+export ROS_DISTRO=melodic
+
+# Add source 
+alias sw="source ./devel/setup.zsh"
+
+if [ -f "./devel/setup.zsh" ]; then
+    sw
+fi
+

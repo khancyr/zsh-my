@@ -1,0 +1,16 @@
+export CCACHE_PREFIX="distcc"
+export CC="ccache gcc" 
+export CXX="ccache g++"
+#192.168.1.54/8,lzo
+export DISTCC_HOSTS='localhost/4 10.42.0.222/8,lzo'
+export DISTCC_JOBS=$(distcc -j)
+#export DISTCC_JOBS=4
+export CATKIN_JOBS=$(( $DISTCC_JOBS ))
+
+echo "Building with $DISTCC_JOBS parallel jobs on following servers:"
+for server in `distcc --show-hosts`; do
+                server=$(echo $server | sed 's/:.*//')
+                echo -e "\t$server"
+done
+
+alias cdistcc="catkin build -p$DISTCC_JOBS -j$DISTCC_JOBS --no-jobserver"

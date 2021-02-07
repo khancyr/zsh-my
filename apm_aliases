@@ -1,0 +1,22 @@
+# Add APM toolchain
+export PATH="/opt/gcc-arm-none-eabi-9-2019-q4-major/bin:$PATH"
+
+# Add ccache tools
+export PATH="/usr/lib/ccache:$PATH"
+
+
+if [ -f "./modules/waf/waf-light" ]; then
+    # Add Waf
+    alias waf="$(pwd)/modules/waf/waf-light"
+    # Add APM tools
+    export PATH="$(pwd)/Tools/autotest:$PATH"
+else
+    # use my default path
+    # Add Waf
+    alias waf="$HOME/Workspace/ardupilot/modules/waf/waf-light"
+    # Add APM tools
+    export PATH="$HOME/Workspace/ardupilot/Tools/autotest:$PATH"
+fi
+
+alias apmcopter="sim_vehicle.py -v ArduCopter -f quad --console --map -D"
+alias apmrover="sim_vehicle.py -v APMrover2 -f rover-skid --console --map -D"
