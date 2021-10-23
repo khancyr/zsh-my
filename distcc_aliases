@@ -1,8 +1,8 @@
 export CCACHE_PREFIX="distcc"
-export CC="ccache gcc" 
-export CXX="ccache g++"
+export CC="ccache arm-linux-gnueabihf-gcc" 
+export CXX="ccache arm-linux-gnueabihf-g++"
 #192.168.1.54/8,lzo
-export DISTCC_HOSTS='localhost/4 10.42.0.222/8,lzo'
+export DISTCC_HOSTS='localhost/8 192.168.1.28/4,lzo'
 export DISTCC_JOBS=$(distcc -j)
 #export DISTCC_JOBS=4
 export CATKIN_JOBS=$(( $DISTCC_JOBS ))

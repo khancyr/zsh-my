@@ -1,34 +1,24 @@
-plugins=(
-  git
-  pip
-  python
-  docker-compos
-  extract
-  command-not-found
-  cp
-  colorize
-  history-substring-search
-  zsh-syntax-highlighting
-)
+plugins=(git pip python docker-compose extract command-not-found cp colorize history-substring-search zsh-syntax-highlighting)
 
 ZSH_THEME="bira"
+_ZSH_MY_DIR=$(builtin cd -q "`dirname "$0"`" > /dev/null && pwd)
 # ROS
-alias loadROS="source $ZSHA_BASE/ros_aliases"
+alias loadROS="source $_ZSH_MY_DIR/ros_aliases"
 
 # Gazebo
-alias loadGazebo="source $ZSHA_BASE/gazebo_aliases"
+alias loadGazebo="source $_ZSH_MY_DIR/gazebo_aliases"
 
 # APM
-alias loadAPM="source $ZSHA_BASE/apm_aliases"
+alias loadAPM="source $_ZSH_MY_DIR/apm_aliases"
 
 # Android
-alias loadDroid="source $ZSHA_BASE/android_aliases"
+alias loadDroid="source $_ZSH_MY_DIR/android_aliases"
 
 # Distcc
-alias loadDistcc="source $ZSHA_BASE/distcc_aliases"
+alias loadDistcc="source $_ZSH_MY_DIR/distcc_aliases"
 
 # APM
-alias loadANAFI="source $ZSHA_BASE/anafi_aliases"
+alias loadANAFI="source $_ZSH_MY_DIR/anafi_aliases"
 
 export PATH="/usr/lib/ccache:$PATH"
 
