@@ -8,4 +8,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 sed -i 's/^# ZSH_CUSTOM=.*$/ZSH_CUSTOM=\/home\/khancyr\/\.zsh-my/g' .zshrc
 
 sed -i 's/^plugins=.*$/plugins=\(git pip python docker-compose extract command-not-found cp colorize history-substring-search zsh-syntax-highlighting\)/g' .zshrc
+
+git config --global core.editor "gedit -w -s" 
 ````
