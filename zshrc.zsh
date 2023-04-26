@@ -1,5 +1,3 @@
-plugins=(git pip python docker-compose extract command-not-found cp colorize history-substring-search zsh-syntax-highlighting)
-
 ZSH_THEME="bira"
 _ZSH_MY_DIR=$(builtin cd -q "`dirname "$0"`" > /dev/null && pwd)
 # ROS
